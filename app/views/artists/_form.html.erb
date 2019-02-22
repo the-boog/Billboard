@@ -1,0 +1,13 @@
+<h1><%= @artist.id ? 'Edit Artist' : 'Create a Artist' %></h1>
+
+<%= form_for @artist do |n| %>
+  <%= n.label :name %>
+  <%= n.text_field :name %>
+
+  <%= n.label :genre %>
+  <%= n.text_field :genre %>
+
+  <%= n.submit "Submit Changes" %>
+  <% end %>
+
+  <%= link_to 'Back', artists_path %>
