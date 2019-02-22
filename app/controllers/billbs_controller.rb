@@ -6,6 +6,7 @@ class BillbsController < ApplicationController
   end
 
   def show 
+    @songs = Song.where(billb_id: @billb)
   end
 
   def edit

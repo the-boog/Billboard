@@ -1,7 +1,9 @@
 class SongsController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
-  before_action :set_artist, except: [:show]
-
+  before_action :set_artist 
+  before_action :get_all, only: [:edit, :update, :new, :create]
+ 
+  
   def index
     @songs = Song.all
   end
@@ -24,7 +26,6 @@ class SongsController < ApplicationController
   def new
     
     @song = @artist.songs.new
-    
     render partial: "form"
     
   end
@@ -42,6 +43,7 @@ class SongsController < ApplicationController
     @song.destroy
     redirect_to billbs_path
   end
+  
 
 private
   def set_params
@@ -49,12 +51,19 @@ private
   end
 
   def song_params
-    params.require(:song).permit(:name, :genre, :artist_id)
+    params.require(:song).permit(:name, :genre, :artist_id, :billb_id)
   end
 
   def set_artist
     @artist = Artist.find(params[:artist_id])
   end
 
+  def get_all
+    @billbs = Billb.all
+    
+  end
+
 end
 
+
+@billbs.map{|n| [n.name, n.id]}

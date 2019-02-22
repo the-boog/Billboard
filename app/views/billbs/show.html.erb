@@ -1,2 +1,9 @@
-<h1>Billbs#show</h1>
 
+<h1><%= @billb.name %></h1>
+<h2>Genre - <%= @billb.genre %></h2>
+
+<% @songs.each do |s| %>
+  <%= s.name %>
+  <% end %>
+
+  <p><%= link_to 'Back', billbs_path %></p>
