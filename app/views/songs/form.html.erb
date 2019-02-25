@@ -9,9 +9,10 @@
   <%= f.label :genre %>
   <%= f.text_field :genre %>
 
-  <%= f.label :billb_id %>
+  <%= f.label :billb_id, "Billboard" %>
   <%= f.select :billb_id, @billbs.map{|n| [n.name, n.id]} << nil %>
 
   <%= f.submit %>
+  <span class="ui button"><%= link_to 'Back', artist_path %></span>
 <% end %>
 

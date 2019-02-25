@@ -9,7 +9,7 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    render partial: "form"
+    render "form"
   end
 
   def update
@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
-    render partial: "form"
+    render "form"
   end
 
   def create

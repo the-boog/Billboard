@@ -1,16 +1,13 @@
-<h1>BillBoard Charts</h1>
-
-
-
-<p><% @billbs.each do |billb| %>
- <h1><%= link_to billb.name, billb_path(billb) %></h1>
- <h3> <%= link_to 'Edit', edit_billb_path(billb) %>
- <%= link_to 'Delete', billb, method: :delete %></h3>
-  <% end %></p>
-  <%= link_to 'New', new_billb_path %>
-
-  <p><%= link_to 'Artists', artists_path %></p>
-
- 
-
+<h6><%= link_to 'Add Billboard Category', new_billb_path %></h6>
+<header>
+  <h1>BillBoard Charts</h1>
+</header>
+<br />
+    <% @billbs.each do |billb| %>
+      <div class="ui button silver">
+        <%= link_to billb.name, billb_path(billb) %>
+      </div>
+      
+  <% end %>
+  
  

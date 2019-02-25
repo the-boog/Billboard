@@ -10,7 +10,7 @@ class BillbsController < ApplicationController
   end
 
   def edit
-    render partial: "form"
+    render "form"
   end
 
   def update
@@ -23,7 +23,7 @@ class BillbsController < ApplicationController
 
   def new
     @billb = Billb.new
-    render partial: "form"
+    render "form"
   end
 
   def create

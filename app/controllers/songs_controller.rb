@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   end
 
   def edit
-    render partial: "form"
+    render "form"
   end
 
   def update
@@ -26,7 +26,7 @@ class SongsController < ApplicationController
   def new
     
     @song = @artist.songs.new
-    render partial: "form"
+    render "form"
     
   end
 
@@ -65,5 +65,3 @@ private
 
 end
 
-
-@billbs.map{|n| [n.name, n.id]}

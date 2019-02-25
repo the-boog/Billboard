@@ -1,9 +1,11 @@
+<h5<><%= link_to 'Edit', edit_billb_path(@billb) %>
+<%= link_to 'Delete', @billb, method: :delete %></h5>
 
 <h1><%= @billb.name %></h1>
-<h2>Genre - <%= @billb.genre %></h2>
 
+<h2>Genre - <%= @billb.genre %></h2>
 <% @songs.each do |s| %>
-  <%= s.name %>
+  <h3><%= s.name %></h3>
   <% end %>
 
   <p><%= link_to 'Back', billbs_path %></p>
