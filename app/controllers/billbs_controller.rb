@@ -15,11 +15,15 @@ class BillbsController < ApplicationController
 
   def update
     if @billb.update(billb_params)
+      flash[:success] = "Billboad Updated"
       redirect_to billbs_path
     else
+      flash[:error] = "error #{@billb.errors.full_messages.join('\n')}"
       render :edit
     end
   end
+
+  
 
   def new
     @billb = Billb.new
@@ -29,8 +33,10 @@ class BillbsController < ApplicationController
   def create
     @billb = current_user.billbs.new(billb_params)
     if @billb.save
+      flash[:success] = "Billboad created"
       redirect_to billbs_path
     else
+      flash[:error] = "error #{@billb.errors.full_messages.join('\n')}"
       render :new
     end
   end
