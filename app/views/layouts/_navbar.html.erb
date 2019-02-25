@@ -1,6 +1,9 @@
 <header>
   <h3 class="ui dividing header">
-    <%= link_to 'Billboards', billbs_path %>
-    <%= link_to 'Artists', artists_path %>
-  </h3>
+    <%= link_to 'Billboards |', billbs_path %>
+    <%= link_to 'Artists |', artists_path %>
+    <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
+
+    </h3>
 </header>
+

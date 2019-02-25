@@ -2,7 +2,7 @@ class BillbsController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
 
   def index
-    @billbs = Billb.all
+    @billbs = current_user.billbs
   end
 
   def show 
@@ -27,7 +27,7 @@ class BillbsController < ApplicationController
   end
 
   def create
-    @billb = Billb.new(billb_params)
+    @billb = current_user.billbs.new(billb_params)
     if @billb.save
       redirect_to billbs_path
     else
@@ -42,7 +42,7 @@ class BillbsController < ApplicationController
 
 private
   def set_params
-    @billb = Billb.find(params[:id])
+    @billb = current_user.billbs.find(params[:id])
   end
 
   def billb_params
