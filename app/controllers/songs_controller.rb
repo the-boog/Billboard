@@ -41,7 +41,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to billbs_path
+    redirect_to artists_path
   end
   
 
